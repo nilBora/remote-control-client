@@ -13,6 +13,7 @@ class Client:
     ACCESS_TOKEN = '333'
 
     def doConnectServer(self):
+        
         sock = socket.socket()
         sock.connect((self.HOST, 8000))
         accessToken = self.getAccessToken()
