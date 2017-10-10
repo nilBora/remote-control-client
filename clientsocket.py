@@ -42,6 +42,8 @@ class ClientSocket:
                             vid = os.popen("shutdown /h")
                         if command == 'shutdown':
                             vid = os.popen("shutdown /s /t 0")
+                        if command == 'mute':
+                            print('mute')
         t1 = threading.Thread(target=writer)
 
         t1.start()
