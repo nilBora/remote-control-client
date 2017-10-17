@@ -67,16 +67,12 @@ class ClientSocket:
         t1.start()
         
     def getAccessToken(self, data):
-        
         request = Request(self.URL_API_LOGIN, urlencode(data).encode())
         dataJson = urlopen(request).read().decode()
-        #data = json.loads(dataJson)
         return dataJson
-       # print(data['token'])
-       # return token
 
     
 
-#client = ClientSocket()
-
-#idDownload = client.doConnectServer([])
+client = ClientSocket()
+userData = {'login': 'nil.borodulia@gmail.com', 'password': 'admin'}
+idDownload = client.doConnectServer(userData)

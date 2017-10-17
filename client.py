@@ -7,15 +7,15 @@ import os
 import requests
 
 class Client:
-    HOST = 'remote.control.server.local'
-    GET = '/socket.php'
-    PORT = 8000
+    HOST = 'control.develop-nil.com'
+    GET = '/socket'
+    PORT = 7778
     ACCESS_TOKEN = '333'
 
     def doConnectServer(self):
         
         sock = socket.socket()
-        sock.connect((self.HOST, 8000))
+        sock.connect((self.HOST, PORT))
         accessToken = self.getAccessToken()
         
         
@@ -32,6 +32,7 @@ class Client:
             if data:
                 options = json.loads(data.decode('utf-8'))
                 command = options['option']
+                print(command)
                 if command == 'vol_plus':
                     vid = os.popen("nircmd.exe changesysvolume 2000")
                 if command == 'vol_minus':

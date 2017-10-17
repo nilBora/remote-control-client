@@ -9,7 +9,7 @@ class Widget(QWidget):
         super().__init__()
         uic.loadUi("form.ui", self)
         self.pushButton.clicked.connect(self.sendLogin)
-        self.lineEdit.setText("brdnlsrg@gmail.com")
+        self.lineEdit.setText("nil.borodulia@gmail.com")
         self.lineEdit_2.setEchoMode(QLineEdit.Password)
         self.lineEdit_2.setText("admin")
         
@@ -20,6 +20,7 @@ class Widget(QWidget):
 
         try:
             cli = ClientSocket()
+            
             idDownload = cli.doConnectServer(data)
         except BaseException as exp:
             if exp.errno == 10061:
